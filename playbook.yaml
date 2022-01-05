@@ -83,9 +83,14 @@
         force: yes
       become: yes
       become_user: "{{ host_user }}"
+  
+    - name: Change repository URL
+      command: git remote set-url origin "git@github.com:{{ github_username }}/kubernetes.git"
+      args:
+        chdir: "/home/{{ host_user }}/go/src/k8s.io/kubernetes"
 
     - name: Add upstream repository
-      shell: git remote add upstream https://github.com/kubernetes/kubernetes.git || /bin/true
+      shell: git remote add upstream git@github.com:kubernetes/kubernetes.git || /bin/true
       args:
         chdir: "/home/{{ host_user }}/go/src/k8s.io/kubernetes"
 

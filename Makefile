@@ -5,9 +5,11 @@ SHELL := bash
 MAKEFLAGS += --warn-undefined-variables
 MAKEFLAGS += --no-builtin-rules
 
-dev: venv
+dev:
+	@echo "Activate your python virtual environment before provisioning the VM"
 	@vagrant up --provision
-	@echo "Run 'vagrant ssh' to SSH to the running Vagrant machine"
+	@echo "Run 'vagrant ssh' to SSH to VirtualBox"
+	@echo "Remember to add the SSH key to your account on GitHub"
 
 venv: requirements.txt
 	@echo "Creating python virtual environment. This might take a while."

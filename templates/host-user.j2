@@ -1,0 +1,3 @@
+Defaults:{{ host_user }} !env_reset
+Defaults:{{ host_user }} secure_path="/home/{{ host_user }}/go/src/k8s.io/kubernetes/third_party/etcd:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/{{ host_user }}/go/bin"
+{{ host_user }} ALL=(ALL:ALL) NOPASSWD:ALL

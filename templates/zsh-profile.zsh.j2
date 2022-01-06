@@ -25,3 +25,13 @@ else
 fi
 
 cd "${K8S_REPO_DIR}"
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/src/k8s.io/kubernetes/third_party/etcd:${PATH}:$GOPATH/bin"
+export CONTAINER_RUNTIME_ENDPOINT="unix:///run/containerd/containerd.sock"
+# If your GOPATH has multiple paths, pick
+# just one and use it instead of $GOPATH here.
+# You must follow exactly this pattern,
+# neither `$GOPATH/src/github.com/${your github profile name/`
+# nor any other pattern will work.
+export working_dir="$(go env GOPATH)/src/k8s.io"
+export user={{ github_username }}

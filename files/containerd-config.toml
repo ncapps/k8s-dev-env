@@ -131,4 +131,3 @@ oom_score = 0
     pool_name = ""
     base_image_size = ""
     async_remove = false
-    

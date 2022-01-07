@@ -35,3 +35,4 @@ export CONTAINER_RUNTIME_ENDPOINT="unix:///run/containerd/containerd.sock"
 # nor any other pattern will work.
 export working_dir="$(go env GOPATH)/src/k8s.io"
 export user={{ github_username }}
+export KUBECONFIG=/var/run/kubernetes/admin.kubeconfig
